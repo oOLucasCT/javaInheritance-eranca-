@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Ifood {
     public static void main(String[] args) {
@@ -11,7 +12,7 @@ public class Ifood {
         
               
        for( int i = 0; i < 3; i++){
-                System.out.print("\nEscolha uma opção: ");
+                System.out.print("\nDigite o numero para fazer o pedido: ");
         int opcao = scanner.nextInt();
 
         System.out.print("Digite a quantidade: ");
@@ -32,6 +33,7 @@ public class Ifood {
             pedidoEscolhido.exibirDados();
         } else {
             System.out.println("Opção inválida.");
+            JOptionPane.showMessageDialog( null, " ERRO: Digite somente UM numero relacionado ao pedido que deseja e precione a tecla 'ENTER', na proxima opcão digite a quantidade e precione a tecla 'ENTER' (SEM LETRAS OU CARACTERES ESPECIAIS)");
         }
        }
         scanner.close();

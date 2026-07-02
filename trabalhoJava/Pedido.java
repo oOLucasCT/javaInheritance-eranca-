@@ -12,8 +12,8 @@ public abstract class Pedido {
         double TotalGeral = this.valorUnitario * this.quantidade;
         Pedido.subtotal += TotalGeral;
 
-        this.nome = nome + " "+ nome + 1;
-        Pedido.TodoNome += nome;
+        this.nome = nome + nome;
+        Pedido.TodoNome += quantidade + "x " + nome + " | ";
 
     }
 
@@ -22,7 +22,7 @@ public abstract class Pedido {
 
     // criando uma variavel para ser "global" e poder somar o total de todos os pedidos
     public static double subtotal = 0.0;
-    public static String TodoNome = "";
+    public static String TodoNome = " ";
 
     public void exibirDados() {
        
@@ -30,7 +30,7 @@ public abstract class Pedido {
         
 
         System.out.println("\n=== RESUMO DO PEDIDO ===");
-        System.out.println("Compra: " + quantidade + "x " + Pedido.TodoNome + "");
+        System.out.println("Compra: " + Pedido.TodoNome);
         System.out.printf("Frete: R$ %.2f\n", frete);
         System.out.printf("TOTAL A PAGAR: R$ %.2f\n", (Pedido.subtotal + frete));
     }
